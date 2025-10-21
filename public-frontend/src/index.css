@@ -1,0 +1,404 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* News Website Design System */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 11% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+
+    /* Brand colors: primary red, accent dark blue */
+    --primary: 0 72% 51%; /* red */
+    --primary-foreground: 0 0% 98%;
+    --accent: 220 64% 24%; /* dark blue */
+    --accent-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 0 72% 51%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 0 72% 51%;
+
+    --radius: 0.25rem;
+
+    /* News specific colors */
+    --news-red: 0 72% 51%;
+    --news-blue: 220 64% 24%; /* dark blue for navbar */
+    --news-green: 142 72% 29%;
+    --news-orange: 27 98% 54%;
+    --news-purple: 270 67% 47%;
+    --news-gray-light: 210 20% 95%;
+    --news-gray-dark: 210 11% 25%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 0 72% 51%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 64% 24%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+    @apply text-foreground;
+  }
+
+  /* Global dark mode text overrides */
+  .dark .text-gray-600 {
+    color: rgb(156 163 175); /* text-gray-400 */
+  }
+
+  .dark .text-gray-500 {
+    color: rgb(156 163 175); /* text-gray-400 */
+  }
+
+  .dark .text-gray-400 {
+    color: rgb(209 213 219); /* text-gray-300 */
+  }
+
+  /* Dark mode article text improvements */
+  .dark .text-gray-800 {
+    color: rgb(255 255 255); /* white */
+  }
+
+  .dark .text-gray-700 {
+    color: rgb(255 255 255); /* white */
+  }
+
+  .dark .text-gray-600 {
+    color: rgb(255 255 255); /* white */
+  }
+
+  .dark .text-gray-500 {
+    color: rgb(255 255 255); /* white */
+  }
+
+  /* Dark mode border improvements */
+  .dark .border-gray-200 {
+    @apply border-gray-700;
+  }
+
+  /* Dark mode background improvements */
+  .dark .bg-gray-100 {
+    @apply bg-gray-800;
+  }
+
+  .dark .bg-gray-50 {
+    @apply bg-gray-800;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .news-accent {
+    @apply text-red-600;
+  }
+  
+  .text-hierarchy-1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+  }
+  
+  .text-hierarchy-2 {
+    @apply text-2xl md:text-3xl font-bold leading-tight;
+  }
+  
+  .text-hierarchy-3 {
+    @apply text-xl md:text-2xl font-semibold leading-tight;
+  }
+  
+  .news-container {
+    @apply container mx-auto px-4;
+  }
+  
+  .section-divider {
+    @apply border-b border-gray-200 mb-6;
+  }
+  
+  .category-badge {
+    @apply bg-red-600 text-white px-2 py-1 text-xs font-bold;
+  }
+  
+  .article-meta {
+    @apply flex items-center text-xs text-gray-500 mt-2;
+  }
+
+  /* Slower breaking news ticker animation */
+  .animate-marquee {
+    display: inline-block;
+    animation: marquee 120s linear infinite; /* slower */
+    will-change: transform;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Improved hover effects */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-md;
+  }
+
+  /* CNN-style article card */
+  .cnn-card {
+    @apply overflow-hidden rounded-md transition-shadow hover:shadow-news-card-hover;
+  }
+
+  .cnn-card-image {
+    @apply relative overflow-hidden;
+  }
+
+  .cnn-card-image img {
+    @apply w-full h-full object-cover transition-transform duration-300;
+  }
+
+  .cnn-card:hover .cnn-card-image img {
+    @apply scale-105;
+  }
+
+  .cnn-card-content {
+    @apply p-4;
+  }
+
+  .cnn-card-title {
+    @apply font-bold hover:text-red-600 transition-colors;
+  }
+
+  .cnn-card-meta {
+    @apply text-xs text-gray-500 dark:text-gray-400 mt-2 flex items-center;
+  }
+
+  /* CNN-style section headings */
+  .cnn-section-heading {
+    @apply text-xl font-bold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700;
+  }
+
+  .cnn-section-heading-accent {
+    @apply text-xl font-bold mb-4 pb-2 border-b-2 border-red-600 inline-block;
+  }
+  
+  /* CNN-style logo */
+  .cnn-logo {
+    @apply flex items-center;
+  }
+  
+  .cnn-logo-box {
+    @apply bg-red-600 text-white font-bold px-2 py-1 text-xl;
+  }
+  
+  .cnn-logo-text {
+    @apply font-bold text-gray-800 dark:text-white;
+  }
+  
+  /* Header styles */
+  .header-sticky {
+    @apply sticky top-0 z-50 transition-all duration-300;
+  }
+  
+  .header-scrolled {
+    @apply shadow-md;
+  }
+  
+  /* Breaking news ticker */
+  .breaking-news-container {
+    @apply bg-red-600 text-white py-2 px-4 overflow-hidden;
+  }
+  
+  .breaking-news-label {
+    @apply shrink-0 font-bold mr-4 uppercase tracking-wider text-sm bg-black bg-opacity-30 px-2 py-1 rounded;
+  }
+  
+  .breaking-news-dot {
+    @apply inline-block h-2 w-2 rounded-full bg-white;
+  }
+  
+  /* Navigation items */
+  .nav-item {
+    @apply px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors;
+  }
+  
+  .nav-dropdown {
+    @apply relative;
+  }
+  
+  /* Apply the group class directly in HTML, not via @apply */
+  
+  .nav-dropdown-content {
+    @apply absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-10 hidden group-hover:block;
+  }
+  
+  .nav-dropdown-item {
+    @apply block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left;
+  }
+  
+  /* Featured article overlay */
+  .featured-article-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent;
+  }
+  
+  /* Moving stories ticker */
+  .moving-stories {
+    @apply whitespace-nowrap overflow-hidden;
+    position: relative;
+  }
+  
+  /* Slower moving stories ticker */
+  .moving-stories-container {
+    display: inline-block;
+    animation: scroll 80s linear infinite; /* slower */
+    animation-delay: -40s;
+  }
+  
+  .moving-stories-container:nth-child(2) {
+    animation: scroll2 80s linear infinite;
+    animation-delay: 0s;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes scroll2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+  /* CNN-style search button */
+  .search-button {
+    @apply rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+  
+  /* Live indicator dot */
+  .live-indicator {
+    @apply w-2 h-2 rounded-full bg-red-600 animate-pulse;
+  }
+
+  /* Article card transitions */
+  .article-card-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .article-card-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+  }
+
+  /* Category pills */
+  .category-pill {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-medium bg-red-600 text-white mr-2 mb-2;
+  }
+
+  /* Timer bar styles */
+  .timer-bar {
+    @apply w-full bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 py-1 flex justify-center items-center;
+  }
+  .timer-logo {
+    @apply font-extrabold text-lg tracking-widest text-white drop-shadow-md shadow-black select-none;
+    letter-spacing: 0.15em;
+  }
+  .timer-clock {
+    @apply bg-black bg-opacity-40 rounded px-3 py-1 font-mono text-lg text-white shadow-md tracking-widest;
+    min-width: 120px;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}

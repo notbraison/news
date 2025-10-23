@@ -240,7 +240,7 @@ const Navigation: React.FC<NavigationProps> = ({
       <div className="w-full relative bg-[linear-gradient(to_right,_#dc2626,_#1e3a8a,_#dc2626)] py-1 flex justify-center items-center">
         <div className="flex items-center gap-4">
           <span className="font-extrabold text-lg tracking-widest text-white drop-shadow-md shadow-black select-none timer-logo">
-            EAST AFRICA BULLETIN
+            NEWS WEBSITE
           </span>
           <span className="bg-black bg-opacity-40 rounded px-3 py-1 font-mono text-lg text-white shadow-md tracking-widest timer-clock">
             {formatDigitalTime(currentTime)}
@@ -248,8 +248,8 @@ const Navigation: React.FC<NavigationProps> = ({
         </div>
         {/* Logo positioned on the right side of the top bar */}
         <img
-          src="/EABlogo.jpg"
-          alt="East Africa Business"
+          src="/logo.jpg"
+          alt="News Website"
           className="absolute left-4 h-8 sm:h-9 md:h-10 w-auto object-contain"
           loading="eager"
         />
@@ -559,7 +559,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 <X className="h-7 w-7 text-red-600" />
               </button>
               <span className="cnn-logo-box ml-2 shadow-md rounded-lg px-3 py-1 text-lg">
-                East Africa News
+                News Website
               </span>
             </div>
             <button
@@ -575,7 +575,7 @@ const Navigation: React.FC<NavigationProps> = ({
               <input
                 type="text"
                 className="w-full px-5 py-3 rounded-full border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 text-lg focus:outline-none focus:ring-2 focus:ring-red-600 shadow-md placeholder-gray-400 dark:placeholder-gray-500"
-                placeholder="Search East Africa News..."
+                placeholder="Search News Website..."
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
               />

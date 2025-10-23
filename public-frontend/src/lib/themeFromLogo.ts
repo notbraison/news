@@ -1,12 +1,12 @@
 /**
  * Initializes CSS theme variables by extracting a small color palette
- * from the site logo located at /EABlogo.jpg. The computed values are
+ * from the site logo located at /logo.jpg. The computed values are
  * applied to :root as HSL triplets (e.g. "0 72% 51%") and also logged
  * to the console for persisting into index.css.
  */
 export async function initializeThemeFromLogo(): Promise<void> {
   try {
-    const img = await loadImage('/EABlogo.jpg');
+    const img = await loadImage('/logo.jpg');
     const { primary, accent, foreground } = extractPalette(img);
 
     const root = document.documentElement;

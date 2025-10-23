@@ -25,7 +25,7 @@ const AuthPage: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-100 via-yellow-50 to-green-100 dark:from-gray-900 dark:to-gray-800 px-2">
       <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 sm:p-10">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-6 text-red-600">
-          {isSignUp ? 'Create your account' : 'Sign in to East Africa News'}
+          {isSignUp ? 'Create your account' : 'Sign in to News Website'}
         </h2>
         <form className="space-y-5" onSubmit={handleSubmit}>
           {isSignUp && (

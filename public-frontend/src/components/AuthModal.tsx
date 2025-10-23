@@ -121,7 +121,7 @@ const AuthModal: React.FC<AuthModalProps> = ({
           ×
         </button>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-6 text-red-600">
-          {isSignUp ? "Create your account" : "Sign in to East Africa News"}
+          {isSignUp ? "Create your account" : "Sign in to News Website"}
         </h2>
         <form className="space-y-5" onSubmit={handleSubmit}>
           {isSignUp && (

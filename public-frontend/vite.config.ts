@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'news',
+    outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
     // Memory optimization settings

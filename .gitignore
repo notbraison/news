@@ -184,3 +184,14 @@ ui-debug.log
 !public/index.php
 
 admin-frontend/news/assets/
+
+# Build outputs
+dist/
+build/
+assets/
+
+
+admin-frontend/dist/
+admin-frontend/assets/
+public-frontend/dist/
+public-frontend/assets/

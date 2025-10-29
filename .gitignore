@@ -182,3 +182,5 @@ ui-debug.log
 
 #ensure it always gets pushed, even if public/ is ignored again.
 !public/index.php
+
+admin-frontend/news/assets/

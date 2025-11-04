@@ -45,7 +45,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Ensure .env exists
-RUN if [ ! -f .env ]; then cp .env.example .env; fi
+#RUN if [ ! -f .env ]; then cp .env.example .env; fi
 
 # Generate Laravel key
 RUN php artisan key:generate --force || true

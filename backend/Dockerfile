@@ -53,4 +53,4 @@ RUN php artisan key:generate --force || true
 EXPOSE 80
 
 # Run migrations + serve app
-CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=80
+CMD php artisan migrate --force && php artisan db:seed && php artisan serve --host=0.0.0.0 --port=80
